@@ -4,6 +4,22 @@ import requests
 import time
 from bs4 import BeautifulSoup
 
+# Function that sends script #
+def send_script(str):
+    if str == 'B':
+        url = 'http://www.script-o-rama.com/movie_scripts/a1/bee-movie-script-transcript-seinfeld.html'
+    elif str == 'S':
+        url = 'http://www.script-o-rama.com/movie_scripts/s/shrek-script-transcript-mike-myers.html'
+    page = requests.get(url)
+    soup = BeautifulSoup(page.content, 'html.parser')
+    results = soup.find('pre')
+    script = results.text.strip()
+    script = script.split(' ')
+    for i in range(35):
+        apple_script = 'send "%s" to buddy "%s" of service "SMS"' % (script[i], pho_num)
+        r = applescript.tell.app("Messages", apple_script, background=True)
+        time.sleep(2)
+
 # Gathers phone number #
 print('Type in a phone number, include country code and area code (eg. +1404XXXXXXX)')
 pho_num = input()
@@ -25,21 +41,6 @@ elif choice == 'S':
 else:
     print('You didnt choose a valid option! Ending program...')
 
-# Function that sends script #
-def send_script(str):
-    if str == 'B':
-        url = 'http://www.script-o-rama.com/movie_scripts/a1/bee-movie-script-transcript-seinfeld.html'
-    elif str == 'S':
-        url = 'http://www.script-o-rama.com/movie_scripts/s/shrek-script-transcript-mike-myers.html'
-    page = requests.get(url)
-    soup = BeautifulSoup(page.content, 'html.parser')
-    results = soup.find('pre')
-    script = results.text.strip()
-    script = script.split(' ')
-    for word in script:
-        apple_script = 'send "%s" to buddy "%s" of service "SMS"' % (word, pho_num)
-        r = applescript.tell.app("Messages", apple_script, background=True)
-        time.sleep(2)
 
 
 
