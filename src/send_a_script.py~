@@ -1,0 +1,8 @@
+import os
+import applescript
+
+print('Type in a phone number, include country code and area code (eg. +1404XXXXXXX)')
+pho_num = input()
+a_script = 'send "Howdy, sent this using Python 3" to buddy "%s" of service "SMS"' % (pho_num)
+r = applescript.tell.app("Messages", a_script, background=True)
+r.code()
