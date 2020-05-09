@@ -2,6 +2,7 @@ import os
 import applescript
 import requests
 import time
+import sys
 from bs4 import BeautifulSoup
 
 # Function that sends script #
@@ -15,8 +16,8 @@ def send_script(str):
     results = soup.find('pre')
     script = results.text.strip()
     script = script.split(' ')
-    for i in range(35):
-        apple_script = 'send "%s" to buddy "%s" of service "SMS"' % (script[i], pho_num)
+    for word in script:
+        apple_script = 'send "%s" to buddy "%s" of service "SMS"' % (word, pho_num)
         r = applescript.tell.app("Messages", apple_script, background=True)
         time.sleep(2)
 
@@ -40,6 +41,7 @@ elif choice == 'S':
     send_script('S')
 else:
     print('You didnt choose a valid option! Ending program...')
+    sys.exit(0)
 
 
 
