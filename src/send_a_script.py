@@ -42,11 +42,3 @@ elif choice == 'S':
 else:
     print('You didnt choose a valid option! Ending program...')
     sys.exit(0)
-
-
-
-
-          
-
-
-
