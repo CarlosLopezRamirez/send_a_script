@@ -18,7 +18,7 @@ def send_script(str):
     script = script.split(' ')
     for word in script:
         apple_script = 'send "%s" to buddy "%s" of service "SMS"' % (word, pho_num)
-        r = applescript.tell.app("Messages", apple_script, background=True)
+        applescript.tell.app("Messages", apple_script, background=True)
         time.sleep(2)
 
 # Gathers phone number #
