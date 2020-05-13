@@ -27,8 +27,8 @@ pho_num = input()
 
 # Gathers choice of script #
 print("""Type and enter one of the following: 
-      - "B" if you want to send the Bee Movie Script,
-      - "S" if you want to send the Shrek Script,
+      - "B" if you want to send the Bee Movie,
+      - "S" if you want to send the Shrek,
       """)
 choice = input()
 
