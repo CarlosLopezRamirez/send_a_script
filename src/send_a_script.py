@@ -30,7 +30,7 @@ print("""Type and enter one of the following:
       - "B" if you want to send the Bee Movie,
       - "S" if you want to send the Shrek,
       """)
-choice = input()
+choice =  input()
 
 # Calls function based on choice of script #
 if choice == 'B':
